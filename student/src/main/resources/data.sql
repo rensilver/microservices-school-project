@@ -1,3 +1,3 @@
-INSERT INTO tb_student (first_Name, last_Name, phone_Number, address) VALUES ('Paulo', 'Silva', 985456598, 'Rua Mario Freitas 65');
-INSERT INTO tb_student (first_Name, last_Name, phone_Number, address) VALUES ('João', 'Carvalho', 987854221, 'Rua Antonio Gaspar 155');
-INSERT INTO tb_student (first_Name, last_Name, phone_Number, address) VALUES ('Ana', 'Freire', 989915879, 'Avenida Afonso Pena 1160');
+INSERT INTO tb_studentprofile (first_Name, last_Name, phone_Number, address) VALUES ('Paulo', 'Silva', 985456598, 'Rua Mario Freitas 65');
+INSERT INTO tb_studentprofile (first_Name, last_Name, phone_Number, address) VALUES ('João', 'Carvalho', 987854221, 'Rua Antonio Gaspar 155');
+INSERT INTO tb_studentprofile (first_Name, last_Name, phone_Number, address) VALUES ('Ana', 'Freire', 989915879, 'Avenida Afonso Pena 1160');

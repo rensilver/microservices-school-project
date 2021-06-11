@@ -20,17 +20,18 @@ public class StudentProfile implements Serializable {
 	private String lastName;
 	private Integer phoneNumber;
 	private String address;
+	private Double finalGrade;
 	
 	public StudentProfile() {
 	}
 
-	public StudentProfile(Long id, String firstName, String lastName, Integer phoneNumber, String address) {
-		super();
+	public StudentProfile(Long id, String firstName, String lastName, Integer phoneNumber, String address, Double finalGrade) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNumber = phoneNumber;
 		this.address = address;
+		this.finalGrade = finalGrade;
 	}
 
 	public Long getId() {
@@ -71,6 +72,14 @@ public class StudentProfile implements Serializable {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	
+	public Double getFinalGrade() {
+		return finalGrade;
+	}
+
+	public void setFinalGrade(Double finalGrade) {
+		this.finalGrade = finalGrade;
 	}
 
 	@Override

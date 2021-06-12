@@ -17,9 +17,9 @@ public class GradeSetupController {
 	@Autowired
 	private GradeSetupService gradeSetupService;
 	
-	@GetMapping(value = "/{studentId}/schoolterms/{schoolTerms}")
-	public ResponseEntity<GradeSetup> getFinalGrade(@PathVariable Long studentId, @PathVariable Integer schoolTerms) {
-		GradeSetup gradeSetup = gradeSetupService.getFinalGrade(studentId, schoolTerms);
+	@GetMapping(value = "/{studentProfileId}")
+	public ResponseEntity<GradeSetup> getFinalGrade(@PathVariable Long studentProfileId) {
+		GradeSetup gradeSetup = gradeSetupService.getFinalGrade(studentProfileId);
 		return ResponseEntity.ok(gradeSetup);
 	}
 }

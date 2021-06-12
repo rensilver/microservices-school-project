@@ -1,65 +1,48 @@
 package com.rensilver.grade.entities;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class GradeSetup {
 
-	private String studentFirstName;
-	private String studentLastName;
-	private Integer year;
-	private Double studentGrades;
-	private Integer schoolTerms;
+	private String studentFullName;
+	private Double totalGrade;
+	private Integer schoolYear;
 	
 	public GradeSetup() {
 	}
 
-	public GradeSetup(String studentFirstName, String studentLastName, Integer year, Double studentGrades, Integer schoolTerms) {
-		this.studentFirstName = studentFirstName;
-		this.studentLastName = studentLastName;
-		this.year = year;
-		this.studentGrades = studentGrades;
-		this.schoolTerms = schoolTerms;
+	public GradeSetup(String studentFullName, Double totalGrade, Integer schoolYear) {
+		this.studentFullName = studentFullName;
+		this.totalGrade = totalGrade;
+		this.schoolYear = schoolYear;
 	}
 
-	public String getStudenFirsttName() {
-		return studentFirstName;
+	public String getStudentFullName() {
+		return studentFullName;
 	}
 
-	public void setStudenFirsttName(String studentFirstName) {
-		this.studentFirstName = studentFirstName;
+	public void setStudentFullName(String studentFullName) {
+		this.studentFullName = studentFullName;
 	}
 
-	public String getStudentLastName() {
-		return studentLastName;
-	}
-
-	public void setStudentLastName(String studentLastName) {
-		this.studentLastName = studentLastName;
-	}
-
-	public Integer getYear() {
-		return year;
-	}
-
-	public void setYear(Integer year) {
-		this.year = year;
-	}
-
-	public Double getStudentGrade() {
-		return studentGrades;
-	}
-
-	public void setStudentGrade(Double studentGrades) {
-		this.studentGrades = studentGrades;
-	}
-
-	public Integer getSchoolTerm() {
-		return schoolTerms;
-	}
-
-	public void setSchoolTerm(Integer schoolTerms) {
-		this.schoolTerms = schoolTerms;
+	public void setTotalGrade(Double totalGrade) {
+		this.totalGrade = totalGrade;
 	}
 	
-	public double getAverage() {
-		return studentGrades / schoolTerms; 
+	public Integer getSchoolYear() {
+		return schoolYear;
+	}
+
+	public void setSchoolYear(Integer schoolYear) {
+		this.schoolYear = schoolYear;
+	}
+	
+	public double getAverageGrade() {
+		int schoolTerms = 4;
+		double average = totalGrade / schoolTerms;
+		BigDecimal bd = new BigDecimal(Double.toString(average));
+		bd = bd.setScale(1, RoundingMode.HALF_UP);
+		return bd.doubleValue();
 	}
 }

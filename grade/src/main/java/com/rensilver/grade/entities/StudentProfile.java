@@ -1,37 +1,22 @@
-package com.rensilver.student.entities;
+package com.rensilver.grade.entities;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "studentprofile")
 public class StudentProfile implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String firstName;
 	private String lastName;
-	private String phoneNumber;
+	private Integer phoneNumber;
 	private String address;
 	
-	@OneToOne
-	@JoinColumn(name = "studentreport_id", referencedColumnName = "id")
 	private StudentReport studentReport;
 	
 	public StudentProfile() {
 	}
 
-	public StudentProfile(Long id, String firstName, String lastName, String phoneNumber, String address, StudentReport studentReport) {
+	public StudentProfile(Long id, String firstName, String lastName, Integer phoneNumber, String address, StudentReport studentReport) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -64,11 +49,11 @@ public class StudentProfile implements Serializable {
 		this.lastName = lastName;
 	}
 
-	public String getPhoneNumber() {
+	public Integer getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
+	public void setPhoneNumber(Integer phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 

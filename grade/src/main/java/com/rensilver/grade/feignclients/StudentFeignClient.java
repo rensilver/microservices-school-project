@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.rensilver.grade.entities.StudentProfile;
 
 @Component
-@FeignClient(name = "student", url = "localhost:8001", path = "/studentprofiles")
+@FeignClient(name = "student", path = "/studentprofiles")
 public interface StudentFeignClient {
 
 	@GetMapping(value = "/{id}")
